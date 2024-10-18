@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store</title>
+    <!-- fontawsome -->
+     <link rel="stylesheet" href="./css/all.min.css">
+    <!-- bootstrap -->
+     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- css -->
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section class="my-5">
+        <div class="container">
+            <h1 class="text-capitalize fs-2 text-center ">product management system</h1>
+            <form class="my-5">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productName" placeholder="name" autocomplete="off" oninput="validate(nameRegex , productName)">
+                    <label for="productName">Name</label>
+                    <p class="error d-none">
+                        Name should start with capital letter followed by 3 small characters or more
+                    </p>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productCategory" placeholder="Category" list="category" autocomplete="off" oninput="validate(categoryRegex , productCategory)">
+                    <label for = "productCategory">Category</label>
+                    <p class="error d-none">
+                        Category should start with capital letter followed by 3 small characters or more
+                    </p>
+                    <datalist id="category">
+                        <option>mobile</option>
+                        <option>labtop</option>
+                        <option>screen</option>
+                        <option>camera</option>
+                        <option>clothes</option>
+                    </datalist>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="productPrice" placeholder="price" autocomplete="off" oninput="validate(priceRegex , productPrice)">
+                    <label for="productPrice">Price</label>
+                    <p class="error d-none">
+                        Price should be between 1 & 100 $
+                    </p>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="productDescription" placeholder="description" oninput="validate(descriptionRegex , productDescription)"></textarea>
+                    <label for="productDescription">Description</label>
+                    <p class="error d-none">
+                        Description should be 10 characters or more 
+                    </p>
+                </div>
+                <div>
+                    <input type="file" id="productImage" class="form-control" accept="image/*">
+                </div>
+                <button type="button" class="btn btn-primary text-capitalize mt-3" onclick="addProduct()">add product</button>
+            </form>
+            <input type="search" oninput="searchProducts()" id="searchInput" class="form-control w-75 mx-auto" placeholder="Search for products...">
+            <div class="row mt-5 g-3" id="productContainer">
+                
+            </div>
+        </div>
+    </section>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

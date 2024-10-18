@@ -1,0 +1,14 @@
+.bg-black{
+    background-color: #161616;
+}
+.inner img{
+    height: 200px;
+    object-fit: contain;
+}
+.error{
+    color: red;
+    font-size: 12px;
+}
+.error::before{
+    content: "* ";
+}
